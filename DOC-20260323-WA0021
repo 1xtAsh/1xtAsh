@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainable Supply Chain Management in International Business</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Lato:wght@300;400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #faf9f6 0%, #f5f0e8 100%);
+            min-height: 100vh;
+        }
+
+        .book-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fffef9;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15), 0 0 100px rgba(139, 115, 85, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decorative floral elements */
+        .floral-corner {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        .floral-corner.top-left {
+            top: 20px;
+            left: 20px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,50 Q10,30 30,20 Q50,10 60,30 Q70,50 50,60 Q30,70 20,50" fill="%23d4a5a5"/><circle cx="40" cy="40" r="8" fill="%23e8b4b4"/><path d="M60,30 Q80,20 90,40 Q100,60 80,70" fill="none" stroke="%23c9b1b1" stroke-width="2"/><path d="M30,60 Q20,80 40,90" fill="none" stroke="%23c9b1b1" stroke-width="2"/></svg>') no-repeat center;
+            background-size: contain;
+        }
+
+        .floral-corner.top-right {
+            top: 20px;
+            right: 20px;
+            transform: scaleX(-1);
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,50 Q10,30 30,20 Q50,10 60,30 Q70,50 50,60 Q30,70 20,50" fill="%23d4a5a5"/><circle cx="40" cy="40" r="8" fill="%23e8b4b4"/><path d="M60,30 Q80,20 90,40 Q100,60 80,70" fill="none" stroke="%23c9b1b1" stroke-width="2"/></svg>') no-repeat center;
+            background-size: contain;
+        }
+
+        .floral-corner.bottom-left {
+            bottom: 20px;
+            left: 20px;
+            transform: scaleY(-1);
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,50 Q10,30 30,20 Q50,10 60,30 Q70,50 50,60 Q30,70 20,50" fill="%23d4a5a5"/><circle cx="40" cy="40" r="8" fill="%23e8b4b4"/><path d="M60,30 Q80,20 90,40 Q100,60 80,70" fill="none" stroke="%23c9b1b1" stroke-width="2"/></svg>') no-repeat center;
+            background-size: contain;
+        }
+
+        .floral-corner.bottom-right {
+            bottom: 20px;
+            right: 20px;
+            transform: scale(-1);
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,50 Q10,30 30,20 Q50,10 60,30 Q70,50 50,60 Q30,70 20,50" fill="%23d4a5a5"/><circle cx="40" cy="40" r="8" fill="%23e8b4b4"/><path d="M60,30 Q80,20 90,40 Q100,60 80,70" fill="none" stroke="%23c9b1b1" stroke-width="2"/></svg>') no-repeat center;
+            background-size: contain;
+        }
+
+        /* Page border */
+        .page-border {
+            border: 3px double #d4af37;
+            margin: 30px;
+            padding: 40px;
+            position: relative;
+            background: #fffef9;
+            min-height: calc(100vh - 60px);
+        }
+
+        .page-border::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+            border: 1px solid #e8d5b5;
+            pointer-events: none;
+        }
+
+        /* Title Page */
+        .title-page {
+            text-align: center;
+            padding: 80px 40px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .title-decoration {
+            font-size: 3rem;
+            color: #d4a5a5;
+            margin: 20px 0;
+            letter-spacing: 10px;
+        }
+
+        .project-code {
+            font-family: 'Lato', sans-serif;
+            font-size: 1.1rem;
+            letter-spacing: 8px;
+            color: #8b7355;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            line-height: 1.3;
+            margin: 30px 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .main-title::before,
+        .main-title::after {
+            content: '❧';
+            display: block;
+            color: #d4af37;
+            font-size: 1.5rem;
+            margin: 20px 0;
+        }
+
+        .subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-style: italic;
+            color: #5d6d7e;
+            margin-top: 20px;
+            font-weight: 500;
+        }
+
+        .synopsis-label {
+            display: inline-block;
+            border: 2px solid #d4af37;
+            padding: 10px 30px;
+            margin: 40px 0;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+            color: #8b7355;
+            text-transform: uppercase;
+        }
+
+        .decorative-line {
+            width: 200px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+            margin: 40px auto;
+            position: relative;
+        }
+
+        .decorative-line::before {
+            content: '◆';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: #d4af37;
+            background: #fffef9;
+            padding: 0 10px;
+        }
+
+        /* Content Pages */
+        .content-page {
+            padding: 60px 50px;
+            page-break-before: always;
+        }
+
+        .chapter-header {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .chapter-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: #d4a5a5;
+            opacity: 0.3;
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: 700;
+        }
+
+        .chapter-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #2c3e50;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #d4af37;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .section-content {
+            text-align: justify;
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #34495e;
+        }
+
+        .section-content p {
+            margin-bottom: 20px;
+            text-indent: 40px;
+        }
+
+        .section-content p:first-of-type {
+            text-indent: 0;
+        }
+
+        .section-content p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            float: left;
+            line-height: 0.8;
+            padding-right: 12px;
+            color: #d4af37;
+            font-weight: 700;
+        }
+
+        /* Objectives special styling */
+        .objectives-list {
+            list-style: none;
+            padding: 0;
+            margin: 30px 0;
+        }
+
+        .objectives-list li {
+            padding: 15px 20px 15px 50px;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #faf7f2 0%, #f5f0e8 100%);
+            border-left: 4px solid #d4af37;
+            position: relative;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .objectives-list li::before {
+            content: '❧';
+            position: absolute;
+            left: 20px;
+            color: #d4a5a5;
+            font-size: 1.2rem;
+        }
+
+        .objectives-list li:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Literature Review special boxes */
+        .literature-box {
+            background: #fffef9;
+            border: 1px solid #e8d5b5;
+            padding: 25px;
+            margin: 25px 0;
+            position: relative;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+
+        .literature-box::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #d4af37, #d4a5a5, #d4af37);
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .author-name {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: #8b7355;
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 10px;
+            border-bottom: 1px dashed #d4a5a5;
+            padding-bottom: 5px;
+        }
+
+        /* References styling */
+        .references-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .references-list li {
+            padding: 15px 20px;
+            margin-bottom: 12px;
+            background: #faf7f2;
+            border-radius: 0;
+            border-left: 3px solid #d4a5a5;
+            font-size: 1.05rem;
+            font-style: italic;
+            transition: all 0.3s ease;
+        }
+
+        .references-list li:hover {
+            background: #f5f0e8;
+            border-left-color: #d4af37;
+            padding-left: 25px;
+        }
+
+        /* Page footer */
+        .page-footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #e8d5b5;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.9rem;
+            color: #8b7355;
+            letter-spacing: 2px;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+            }
+            .book-container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+            .page-border {
+                margin: 0;
+                border: 2px solid #d4af37;
+            }
+            .content-page {
+                page-break-before: always;
+            }
+            .title-page {
+                page-break-after: always;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-border {
+                margin: 10px;
+                padding: 20px;
+            }
+            .main-title {
+                font-size: 1.8rem;
+            }
+            .content-page {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="book-container">
+        <!-- Floral Decorations -->
+        <div class="floral-corner top-left"></div>
+        <div class="floral-corner top-right"></div>
+        <div class="floral-corner bottom-left"></div>
+        <div class="floral-corner bottom-right"></div>
+
+        <!-- Title Page -->
+        <div class="page-border">
+            <div class="title-page">
+                <div class="project-code">MCOP-01</div>
+
+                <div class="synopsis-label">Synopsis</div>
+
+                <h1 class="main-title">
+                    Sustainable Supply Chain Management in International Business
+                </h1>
+
+                <div class="decorative-line"></div>
+
+                <p class="subtitle">
+                    An Analytical Study of Environmental, Social, and Economic Integration in Global Supply Chains
+                </p>
+
+                <div class="title-decoration">❦ ❦ ❦</div>
+
+                <div style="margin-top: 60px; font-family: 'Lato', sans-serif; color: #8b7355; font-size: 0.9rem; letter-spacing: 2px;">
+                    Academic Research Project
+                </div>
+            </div>
+        </div>
+
+        <!-- Introduction Chapter -->
+        <div class="page-border">
+            <div class="content-page">
+                <div class="chapter-header">
+                    <div class="chapter-number">I</div>
+                    <h2 class="chapter-title">Introduction</h2>
+                </div>
+
+                <div class="section-content">
+                    <p>Introduction is the starting part of the project which provides a clear understanding of the topic and sets the foundation for the entire study. It explains the background of the topic and helps the reader understand its importance in the present business environment.</p>
+
+                    <p>Sustainable Supply Chain Management (SSCM) is an important concept in modern business that focuses on integrating environmental, social, and economic considerations into supply chain activities. It involves managing processes such as sourcing of raw materials, production, transportation, and distribution of goods and services in a responsible and sustainable manner.</p>
+
+                    <p>Sustainable supply chain management is the practice of integrating environmental, social, and financial considerations into the sourcing, production, and distribution of goods and services. It goes beyond traditional supply chain management by emphasizing the need to balance economic performance with environmental protection and social responsibility.</p>
+
+                    <p>The practice involves managing the entire supply chain, from procurement of raw materials to the final disposal of products, with sustainability in mind. This includes reducing greenhouse gas emissions, minimizing waste, improving working conditions, and adopting eco-friendly technologies and practices.</p>
+
+                    <p>In today's globalized business environment, supply chains have become increasingly complex and interconnected. This has led to growing environmental and social challenges. Businesses are now expected to operate responsibly and ensure that their activities do not harm the environment or society.</p>
+
+                    <p>Furthermore, sustainable supply chain management aims to minimize the negative impact of business operations while ensuring efficiency and reliability. It also helps organizations improve their brand image, build customer trust, and achieve long-term growth and sustainability.</p>
+
+                    <p>Thus, sustainable supply chain management plays a vital role in international business and is essential for achieving sustainable development.</p>
+                </div>
+
+                <div class="page-footer">— 1 —</div>
+            </div>
+        </div>
+
+        <!-- Rationale Chapter -->
+        <div class="page-border">
+            <div class="content-page">
+                <div class="chapter-header">
+                    <div class="chapter-number">II</div>
+                    <h2 class="chapter-title">Rationale</h2>
+                </div>
+
+                <div class="section-content">
+                    <p>Sustainable Supply Chain Management has been chosen as the topic of this study due to its growing importance in the modern business world. Today, organizations are not only focused on profit maximization but are also expected to consider environmental protection and social responsibility in their operations.</p>
+
+                    <p>Supply chains are becoming increasingly complex and have a significant impact on the environment. Studies indicate that a large portion of a company's total greenhouse gas emissions originates from its supply chain activities. This highlights the urgent need for adopting sustainable practices in supply chain management.</p>
+
+                    <p>Sustainable supply chain management initiatives help in reducing carbon emissions, minimizing waste, and promoting eco-friendly practices. These practices contribute to environmental protection and help organizations operate responsibly.</p>
+
+                    <p>Implementing sustainable supply chain practices also provides several business benefits. It improves cost efficiency by reducing waste and energy consumption. It enhances reliability and resilience in supply chain operations, which helps organizations manage risks effectively.</p>
+
+                    <p>Moreover, as companies increasingly focus on corporate social responsibility, sustainable supply chains play a crucial role in achieving environmental, social, and governance (ESG) objectives. Sustainability also improves brand image and strengthens customer trust, as consumers are becoming more aware of environmental and ethical issues.</p>
+
+                    <p>In addition, sustainable supply chain management helps organizations comply with regulations and reduces the risk of reputational damage caused by environmental harm or unethical practices.</p>
+
+                    <p>Therefore, the study of sustainable supply chain management is highly relevant and useful for understanding how businesses can achieve long-term success while contributing to environmental and social well-being.</p>
+                </div>
+
+                <div class="page-footer">— 2 —</div>
+            </div>
+        </div>
+
+        <!-- Literature Review Chapter -->
+        <div class="page-border">
+            <div class="content-page">
+                <div class="chapter-header">
+                    <div class="chapter-number">III</div>
+                    <h2 class="chapter-title">Literature Review</h2>
+                </div>
+
+                <div class="section-content">
+                    <p>A review of earlier studies is important to understand the work already done in the area of sustainable supply chain management. It helps in identifying research gaps and selecting appropriate approaches for analysis. Various researchers have conducted studies on sustainability practices in supply chains using different methods and perspectives.</p>
+
+                    <div class="literature-box">
+                        <span class="author-name">Carter and Rogers (2008)</span>
+                        Explained that sustainable supply chain management integrates environmental, social, and economic goals into business operations and improves long-term organizational performance and competitive advantage.
+                    </div>
+
+                    <div class="literature-box">
+                        <span class="author-name">Seuring and Müller (2008)</span>
+                        Emphasized that companies must balance economic performance with environmental and social responsibilities to achieve sustainability in global supply chains.
+                    </div>
+
+                    <div class="literature-box">
+                        <span class="author-name">Pagell and Wu (2009)</span>
+                        Found that organizations adopting sustainable practices achieve better operational efficiency and improved risk management.
+                    </div>
+
+                    <div class="literature-box">
+                        <span class="author-name">Ahi and Searcy (2013)</span>
+                        Highlighted that environmental and social considerations are becoming central to supply chain decision-making processes.
+                    </div>
+
+                    <div class="literature-box">
+                        <span class="author-name">Beske and Seuring (2014)</span>
+                        Emphasized the importance of collaboration among supply chain partners in improving sustainability performance.
+                    </div>
+
+                    <div class="literature-box">
+                        <span class="author-name">Govindan et al. (2015)</span>
+                        Observed that reducing waste and emissions leads to cost savings and improved efficiency.
+                    </div>
+
+                    <div class="literature-box">
+                        <span class="author-name">Brandenburg et al. (2016)</span>
+                        Highlighted the role of technology in improving sustainability and decision-making in supply chains.
+                    </div>
+
+                    <div class="literature-box">
+                        <span class="author-name">Touboulic and Walker (2017)</span>
+                        Concluded that stakeholder pressure plays a key role in encouraging organizations to adopt sustainable practices.
+                    </div>
+
+                    <p>Overall, the literature suggests that sustainable supply chain management is essential for achieving business efficiency, environmental protection, and long-term sustainability.</p>
+                </div>
+
+                <div class="page-footer">— 3 —</div>
+            </div>
+        </div>
+
+        <!-- Objectives Chapter -->
+        <div class="page-border">
+            <div class="content-page">
+                <div class="chapter-header">
+                    <div class="chapter-number">IV</div>
+                    <h2 class="chapter-title">Objectives</h2>
+                </div>
+
+                <div class="section-content">
+                    <p>Objectives are an essential part of any research study as they define the purpose and direction of the project work. They provide a clear framework for conducting the research in a systematic manner.</p>
+
+                    <p style="text-align: center; font-style: italic; margin: 30px 0; color: #8b7355; font-size: 1.2rem;">The objectives of this study are as follows:</p>
+
+                    <ul class="objectives-list">
+                        <li>To examine the concept of sustainable supply chain management in the context of international business.</li>
+                        <li>To analyse the importance of sustainability in supply chain activities such as sourcing, production, and distribution.</li>
+                        <li>To evaluate the environmental impact of supply chain operations, including carbon emissions and waste generation.</li>
+                        <li>To study the role of social responsibility in supply chain management, including ethical sourcing and labour practices.</li>
+                        <li>To analyse the economic benefits of sustainable supply chain management, such as cost efficiency and improved performance.</li>
+                        <li>To identify the major factors influencing the adoption of sustainable supply chain practices in organizations.</li>
+                        <li>To investigate the impact of sustainable supply chain management on business performance and competitiveness.</li>
+                        <li>To draw meaningful conclusions and provide suitable suggestions based on the findings of the study.</li>
+                    </ul>
+
+                    <p>These objectives help in providing a comprehensive understanding of sustainable supply chain management.</p>
+                </div>
+
+                <div class="page-footer">— 4 —</div>
+            </div>
+        </div>
+
+        <!-- Research Methodology Chapter -->
+        <div class="page-border">
+            <div class="content-page">
+                <div class="chapter-header">
+                    <div class="chapter-number">V</div>
+                    <h2 class="chapter-title">Research Methodology</h2>
+                </div>
+
+                <div class="section-content">
+                    <p>Research methodology refers to the systematic process used to conduct the research study in order to achieve the stated objectives. It includes research design, sources of data, methods of data collection, and techniques used for analysis.</p>
+
+                    <p>The present study is descriptive and analytical in nature. A descriptive research design has been adopted to explain the concept and importance of sustainable supply chain management in international business. The analytical approach helps in examining various aspects such as environmental impact, social responsibility, and economic benefits.</p>
+
+                    <p>The study is based entirely on secondary data. Secondary data has been collected from reliable and published sources such as books on supply chain management, research journals, articles, company sustainability reports, and online academic databases. These sources provide valuable information regarding existing practices and trends in sustainable supply chain management.</p>
+
+                    <p>No primary data collection methods such as questionnaires or interviews have been used in this study. The data has been collected through a documentary method, which involves reviewing and analysing information from various published sources.</p>
+
+                    <p>The data collected has been organised and analysed using descriptive and comparative techniques. This includes understanding different sustainability practices, identifying benefits and challenges, and interpreting their impact on business performance.</p>
+
+                    <p>This methodology is suitable for the study as it helps in developing a clear and comprehensive understanding of sustainable supply chain management in international business.</p>
+                </div>
+
+                <div class="page-footer">— 5 —</div>
+            </div>
+        </div>
+
+        <!-- Implications Chapter -->
+        <div class="page-border">
+            <div class="content-page">
+                <div class="chapter-header">
+                    <div class="chapter-number">VI</div>
+                    <h2 class="chapter-title">Implications</h2>
+                </div>
+
+                <div class="section-content">
+                    <p>The present study on sustainable supply chain management has several important implications for different stakeholders including businesses, investors, policymakers, and society as a whole. It highlights the significance of adopting sustainable practices in modern business operations.</p>
+
+                    <p>For businesses and management, the study provides insights into how sustainability can be integrated into supply chain activities. It helps organizations improve efficiency, reduce operational costs, and enhance decision-making processes. Sustainable practices also contribute to better risk management and long-term growth.</p>
+
+                    <p>For investors, the study helps in understanding the importance of sustainability in evaluating business performance. Companies that adopt sustainable supply chain practices are considered more reliable and responsible, which increases investor confidence and supports long-term investment decisions.</p>
+
+                    <p>For customers and society, the study emphasizes the importance of ethical sourcing, fair labour practices, and environmental protection. It promotes awareness about responsible consumption and encourages businesses to maintain transparency and accountability.</p>
+
+                    <p>For government and policymakers, the study highlights the need for proper regulations and policies to promote sustainability in business operations. It supports the development of frameworks that ensure environmental protection and social welfare.</p>
+
+                    <p>From an academic perspective, the study contributes to the existing knowledge of sustainable supply chain management and provides a useful reference for students and researchers.</p>
+
+                    <p>Overall, the study highlights the importance of sustainability in achieving long-term business success while contributing to environmental and social well-being.</p>
+                </div>
+
+                <div class="page-footer">— 6 —</div>
+            </div>
+        </div>
+
+        <!-- Limitations Chapter -->
+        <div class="page-border">
+            <div class="content-page">
+                <div class="chapter-header">
+                    <div class="chapter-number">VII</div>
+                    <h2 class="chapter-title">Limitations</h2>
+                </div>
+
+                <div class="section-content">
+                    <p>Every research study has certain limitations due to constraints related to data availability, time, and scope. The present study on sustainable supply chain management is also subject to some limitations.</p>
+
+                    <p>The study is based entirely on secondary data collected from books, journals, and online sources. Therefore, the accuracy and reliability of the study depend on the correctness of the available data. Any limitations in the original sources may affect the results of the study.</p>
+
+                    <p>The study focuses on general concepts and does not analyse a specific company or industry in detail. As a result, the findings may not reflect the actual practices followed by individual organizations.</p>
+
+                    <p>The scope of the study is limited and does not cover all aspects of sustainable supply chain management in depth. Factors such as technological advancements, market competition, and industry-specific challenges are not analysed comprehensively.</p>
+
+                    <p>The study does not consider the detailed impact of external factors such as economic conditions, government policies, and global market fluctuations, which may influence sustainable supply chain practices.</p>
+
+                    <p>Time constraints have also limited the depth of the study, and therefore only selected aspects of sustainable supply chain management have been covered.</p>
+
+                    <p>Despite these limitations, the study attempts to provide a meaningful understanding of sustainable supply chain management based on available information.</p>
+                </div>
+
+                <div class="page-footer">— 7 —</div>
+            </div>
+        </div>
+
+        <!-- References Chapter -->
+        <div class="page-border">
+            <div class="content-page">
+                <div class="chapter-header">
+                    <div class="chapter-number">VIII</div>
+                    <h2 class="chapter-title">References</h2>
+                </div>
+
+                <div class="section-content">
+                    <ul class="references-list">
+                        <li>Chopra, S. and Meindl, P. (2016). <em>Supply Chain Management: Strategy, Planning and Operation.</em> Pearson Education.</li>
+
+                        <li>Christopher, M. (2016). <em>Logistics and Supply Chain Management.</em> Pearson Education.</li>
+
+                        <li>Carter, C.R. and Rogers, D.S. (2008). "A Framework of Sustainable Supply Chain Management."</li>
+
+                        <li>Seuring, S. and Müller, M. (2008). "Sustainable Supply Chain Framework."</li>
+
+                        <li>Govindan, K. et al. (2015). "Green Supply Chain Management."</li>
+
+                        <li>Dubey, R. et al. (2020). "Big Data and Sustainable Supply Chains."</li>
+
+                        <li>Research articles, journals, and online academic sources</li>
+                    </ul>
+                </div>
+
+                <div style="text-align: center; margin-top: 60px; padding: 40px; background: linear-gradient(135deg, #faf7f2 0%, #f5f0e8 100%); border: 1px solid #e8d5b5;">
+                    <div style="font-size: 2rem; color: #d4a5a5; margin-bottom: 15px;">❦</div>
+                    <p style="font-style: italic; color: #8b7355; font-size: 1.1rem; margin: 0;">End of Synopsis</p>
+                    <div style="font-size: 2rem; color: #d4a5a5; margin-top: 15px;">❦</div>
+                </div>
+
+                <div class="page-footer">— 8 —</div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
